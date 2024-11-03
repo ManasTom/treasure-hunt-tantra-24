@@ -10,9 +10,8 @@
 
 <body class="body">
     <header class="header" id="levelHeader">TREASUREHUNT - Level 1</header>
-
     <section class="banner">
-        <img src="clue1.jpeg" alt="Level 1 Clue" id="clueImage">
+        <img src="clue1.webp" alt="Level 1 Clue" id="clueImage">
     </section>
 
     <section class="directions">
@@ -60,7 +59,7 @@
 
     // Update page for each level
     function updateLevel() {
-        clueImage.src = `clue${currentLevel}.jpeg`; // Assuming images are named as clue1.png, clue2.png, etc.
+        clueImage.src = `clue${currentLevel}.webp`;
         inputField.value = ""; // Clear the input field
         levelInstructions.textContent = `Solve the above clue and enter passcode for level ${currentLevel} to continue.`;
         levelHeader.textContent = `TREASUREHUNT - Level ${currentLevel}`; // Update header with level number
