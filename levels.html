@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt - TANTRA 24</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body">
+    <header class="header" id="levelHeader">TREASUREHUNT - Level 1</header>
+
+    <section class="banner">
+        <img src="clue1.jpeg" alt="Level 1 Clue" id="clueImage">
+    </section>
+
+    <section class="directions">
+        <p id="levelInstructions">Solve the above clue and enter the passcode for level 1 to continue.</p>
+        <section class="entry_box">
+            <input type="text" placeholder="Enter the Passcode..">
+            <button type="button" class="btn">
+                <strong>ENTER</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+        </section>
+    </section>
+    <footer class="footer">
+        For Queries : <a href="+91 xxxxxxxxx">+91 xxxxxxxxx</a>
+    </footer>
+</body>
+
+<script>
+    // Define the passcodes for each level
+    const levelCodes = {
+        1: "code1",
+        2: "code2",
+        3: "code3",
+        4: "code4",
+        5: "code5"
+    };
+
+    // Track the current level
+    let currentLevel = 1;
+
+    // Elements
+    const inputField = document.querySelector(".entry_box input");
+    const enterButton = document.querySelector(".btn");
+    const clueImage = document.getElementById("clueImage");
+    const levelInstructions = document.getElementById("levelInstructions");
+    const levelHeader = document.getElementById("levelHeader");
+
+
+    // Update page for each level
+    function updateLevel() {
+        clueImage.src = `clue${currentLevel}.jpeg`; // Assuming images are named as clue1.png, clue2.png, etc.
+        inputField.value = ""; // Clear the input field
+        levelInstructions.textContent = `Solve the above clue and enter passcode for level ${currentLevel} to continue.`;
+        levelHeader.textContent = `TREASUREHUNT - Level ${currentLevel}`; // Update header with level number
+
+    }
+
+    // Check the passcode and progress to the next level
+    enterButton.addEventListener("click", () => {
+        const enteredCode = inputField.value.trim();
+        if (enteredCode === levelCodes[currentLevel]) {
+            if (currentLevel < 5) {
+                currentLevel++;
+                updateLevel();
+            } else {
+                levelInstructions.textContent = "Congratulations! You have completed the treasure hunt! <br/> Report the codeword 'HALO' to the cordinators <br/>";
+                document.querySelector(".entry_box").style.display = "none"; // Hide input after last level
+                clueImage.style.display = "none";
+
+            }
+        } else {
+            alert("Incorrect code. Please try again.");
+        }
+    });
+
+    // Initial setup
+    updateLevel();
+</script>
+
+</html>

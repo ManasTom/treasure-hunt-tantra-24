@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREASUREHUNT - TANTRA 24</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="body">
+    <header class="header">
+        TREASUREHUNT
+    </header>
+    <section class="banner">
+        <img src="banner.png" alt="">
+    </section>
+    <section class="directions">
+        <h2>IMPORTANT !!</h2>
+        <p>
+            🛑Individual Participation only. <br><br>
+            🛑Any kind of malpractices noted will lead to disqualification from the game. <br><br>
+            🛑Do not press back button, close the tab or window during the game. You may loose your progress.<br><br>
+            🛑The coordinators team reserves full right over the conduction, prize declaration and disqualification
+            decisions of the game <br>
+        </p>
+    </section>
+    <section class="entry_box">
+        <input type="text" placeholder="Enter the Passcode..">
+        <button type="button" class="btn">
+            <strong>ENTER</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+
+    </section>
+    <footer class="footer">
+        For Queries : <a href="+91 xxxxxxxxx">+91 xxxxxxxxx</a>
+    </footer>
+    <script>
+        document.querySelector(".btn").addEventListener("click", () => {
+            const enteredCode = document.querySelector(".entry_box input").value.trim();
+            const initialPasscode = "start123"; // Set this to your desired starting passcode
+
+            if (enteredCode === initialPasscode) {
+                window.location.href = "levels.html";
+            } else {
+                alert("Incorrect passcode. Try again.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
