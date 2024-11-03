@@ -74,10 +74,10 @@
                 currentLevel++;
                 updateLevel();
             } else {
-                levelInstructions.textContent = "Congratulations! You have completed the treasure hunt! <br/> Report the codeword 'HALO' to the cordinators <br/>";
+                levelInstructions.textContent = "Congratulations! You have completed the treasure hunt!!. Report the codeword 'HALO' to the cordinators..";
                 document.querySelector(".entry_box").style.display = "none"; // Hide input after last level
                 clueImage.style.display = "none";
-
+                levelInstructions.style.paddingTop = "30px";
             }
         } else {
             alert("Incorrect code. Please try again.");
